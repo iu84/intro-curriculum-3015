@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
     'Content-Type': 'text/html; charset=utf-8'
   });
 
-  switch (req.method) {
+ switch (req.method) {
     case 'GET':
       if (req.url === '/enquetes/yaki-shabu') {
         res.write(jade.renderFile('./form.jade', {
@@ -41,7 +41,6 @@ const server = http.createServer((req, res) => {
     default:
       break;
   }
-
 }).on('error', (e) => {
   console.error('[' + new Date() + '] Server Error', e);
 }).on('clientError', (e) => {
